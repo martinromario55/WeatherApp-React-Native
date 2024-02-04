@@ -12,7 +12,7 @@ const App = () => {
 
   // console.log('weather data', weather, 'loading', loading, error)
 
-  const { container } = styles
+  const { container, loadContainer } = styles
 
   if (weather && weather.list) {
     return (
@@ -23,10 +23,14 @@ const App = () => {
   }
   return (
     <View style={container}>
-      {loading ? (
-        <ActivityIndicator size={'large'} color={'blue'} />
-      ) : (
+      {error ? (
         <ErrorItem />
+      ) : (
+        <ActivityIndicator
+          size={'large'}
+          color={'blue'}
+          style={loadContainer}
+        />
       )}
     </View>
   )
@@ -37,5 +41,10 @@ export default App
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  loadContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })

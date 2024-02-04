@@ -3,9 +3,9 @@ import React from 'react'
 import { Feather } from '@expo/vector-icons'
 
 const ErrorItem = () => {
-  const { container, errorMessage } = styles
+  const { errorContainer, errorMessage } = styles
   return (
-    <View style={container}>
+    <View style={errorContainer}>
       <Text style={errorMessage}>Sorry something went wrong.</Text>
       <Feather name={'frown'} size={100} color="white" />
     </View>
@@ -13,7 +13,7 @@ const ErrorItem = () => {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  errorContainer: {
     flex: 1,
     backgroundColor: 'red',
     alignItems: 'center',
@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: 'white',
     marginHorizontal: 10,
-    textAlign: 'center',
     fontWeight: 'bold'
   }
 })

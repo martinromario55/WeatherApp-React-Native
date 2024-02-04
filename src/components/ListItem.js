@@ -9,8 +9,8 @@ const ListItem = (props) => {
   const { item, date, temp, dateTextWrapper } = styles
 
   return (
-    <View style={styles.item}>
-      <Feather name={weatherType[condition].icon} size={50} color="white" />
+    <View style={item}>
+      <Feather name={weatherType[condition]?.icon} size={50} color="white" />
       <View style={dateTextWrapper}>
         <Text style={date}>{moment(dt_txt).format('dddd')}</Text>
         <Text style={date}>{moment(dt_txt).format('h:mm:ss a')}</Text>
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     borderWidth: 5,
-    backgroundColor: 'pink',
+    backgroundColor: 'indianred',
     marginHorizontal: 16,
     marginVertical: 16
   },
