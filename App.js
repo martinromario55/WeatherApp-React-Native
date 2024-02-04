@@ -1,14 +1,15 @@
 import { StyleSheet, Text, View, Platform } from 'react-native'
 import { StatusBar as Status } from 'expo-status-bar'
 import React from 'react'
-import CurrentWeather from './components/CurrentWeather'
-import UpcomingWeather from './components/UpcomingWeather'
+import CurrentWeather from './screens/CurrentWeather'
+import UpcomingWeather from './screens/UpcomingWeather'
+import City from './screens/City'
 
 const App = () => {
   return (
     <View style={styles.container}>
       {Platform.OS === 'ios' && <Status style="auto" />}
-      <UpcomingWeather />
+      <City />
     </View>
   )
 }
