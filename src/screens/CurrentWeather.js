@@ -42,7 +42,7 @@ export default function CurrentWeather({ weatherData }) {
         <Text style={feels}>{`Feels like ${feels_like}°`}</Text>
 
         <RowText
-          messageOne={`High: ${temp_max}°`}
+          messageOne={`High: ${temp_max}° `}
           messageTwo={`Low: ${temp_min}°`}
           containerStyles={hilowWrapper}
           messageOneStyles={highLow}
