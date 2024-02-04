@@ -4,7 +4,9 @@ import {
   StyleSheet,
   Text,
   View,
-  StatusBar
+  StatusBar,
+  Image,
+  ImageBackground
 } from 'react-native'
 import React from 'react'
 import { Feather } from '@expo/vector-icons'
@@ -72,12 +74,17 @@ const UpcomingWeather = () => {
   )
   return (
     <SafeAreaView style={styles.container}>
-      <Text>UpcomingWeather</Text>
-      <FlatList
-        data={DATA}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.dt_txt}
-      />
+      <ImageBackground
+        source={require('../assets/cloudy.jpg')}
+        style={styles.image}
+      >
+        <Text>UpcomingWeather</Text>
+        <FlatList
+          data={DATA}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.dt_txt}
+        />
+      </ImageBackground>
     </SafeAreaView>
   )
 }
@@ -88,7 +95,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
-    backgroundColor: '#f00'
+    backgroundColor: 'royalblue'
   },
   item: {
     padding: 10,
@@ -107,5 +114,8 @@ const styles = StyleSheet.create({
   date: {
     fontSize: 15,
     color: 'white'
+  },
+  image: {
+    flex: 1
   }
 })
