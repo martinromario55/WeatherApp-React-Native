@@ -3,9 +3,7 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
-  View,
   StatusBar,
-  Image,
   ImageBackground
 } from 'react-native'
 import React from 'react'
@@ -63,7 +61,10 @@ const UpcomingWeather = () => {
   )
   return (
     <SafeAreaView style={container}>
-      <ImageBackground source={require('../assets/cloudy.jpg')} style={image}>
+      <ImageBackground
+        source={require('../../assets/cloudy.jpg')}
+        style={image}
+      >
         <Text>UpcomingWeather</Text>
         <FlatList
           data={DATA}

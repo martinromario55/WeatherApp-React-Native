@@ -1,23 +1,16 @@
-import { StyleSheet, Text, View, Platform } from 'react-native'
+import { Platform } from 'react-native'
 import { StatusBar as Status } from 'expo-status-bar'
 import React from 'react'
-import CurrentWeather from './screens/CurrentWeather'
-import UpcomingWeather from './screens/UpcomingWeather'
-import City from './screens/City'
+import { NavigationContainer } from '@react-navigation/native'
+import Tabs from './src/components/Tabs'
 
 const App = () => {
   return (
-    <View style={styles.container}>
+    <NavigationContainer>
       {Platform.OS === 'ios' && <Status style="auto" />}
-      <CurrentWeather />
-    </View>
+      <Tabs />
+    </NavigationContainer>
   )
 }
 
 export default App
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-})

@@ -26,7 +26,7 @@ const City = () => {
   return (
     <SafeAreaView style={container}>
       <ImageBackground
-        source={require('../assets/city-background.jpg')}
+        source={require('../../assets/city-background.jpg')}
         style={image}
       >
         <View style={cityWrapper}>
