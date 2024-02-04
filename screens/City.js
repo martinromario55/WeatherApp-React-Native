@@ -7,7 +7,7 @@ import {
   ImageBackground
 } from 'react-native'
 import React from 'react'
-import { Feather } from '@expo/vector-icons'
+import IconText from '../components/IconText'
 
 const City = () => {
   const {
@@ -20,7 +20,8 @@ const City = () => {
     populationWrapper,
     populationText,
     riseSetWrapper,
-    riseSetText
+    riseSetText,
+    rowLayout
   } = styles
   return (
     <SafeAreaView style={container}>
@@ -33,16 +34,28 @@ const City = () => {
           <Text style={[cityCountry, cityText]}>Kenya</Text>
         </View>
 
-        <View style={populationWrapper}>
-          <Feather name="user" size={50} color="red" />
-          <Text style={populationText}>8000</Text>
+        <View style={[populationWrapper, rowLayout]}>
+          <IconText
+            iconName={'user'}
+            iconColor={'red'}
+            bodyText={'8000'}
+            bodyTextStyles={populationText}
+          />
         </View>
 
-        <View style={riseSetWrapper}>
-          <Feather name="sunrise" size={50} color="white" />
-          <Text style={riseSetText}>6:46:58am</Text>
-          <Feather name="sunset" size={50} color="white" />
-          <Text style={riseSetText}>6:28:15pm</Text>
+        <View style={[riseSetWrapper, rowLayout]}>
+          <IconText
+            iconName={'sunrise'}
+            iconColor={'white'}
+            bodyText={'6:46:58am'}
+            bodyTextStyles={riseSetText}
+          />
+          <IconText
+            iconName={'sunset'}
+            iconColor={'white'}
+            bodyText={'8:28:15pm'}
+            bodyTextStyles={riseSetText}
+          />
         </View>
       </ImageBackground>
     </SafeAreaView>
@@ -78,27 +91,27 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   populationWrapper: {
-    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
     marginTop: 30
   },
   populationText: {
     fontSize: 35,
     marginLeft: 7.5,
-    color: 'red',
-    fontWeight: 'bold'
+    color: 'red'
   },
   riseSetWrapper: {
     flexDirection: 'row',
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'space-around',
     marginTop: 30
   },
   riseSetText: {
     fontSize: 20,
     marginLeft: 7.5,
-    color: 'white',
-    fontWeight: 'bold'
+    color: 'white'
+  },
+  rowLayout: {
+    flexDirection: 'row',
+    alignItems: 'center'
   }
 })
