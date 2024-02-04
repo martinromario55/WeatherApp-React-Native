@@ -9,7 +9,7 @@ import useGetWeather from './src/hooks/useGetWeather'
 const App = () => {
   const [loading, error, weather] = useGetWeather()
 
-  console.log('weather data', weather, 'loading', loading, error)
+  // console.log('weather data', weather, 'loading', loading, error)
 
   const { container } = styles
   if (loading) {

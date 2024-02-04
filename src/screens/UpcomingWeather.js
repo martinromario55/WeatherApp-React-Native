@@ -9,47 +9,7 @@ import {
 import React from 'react'
 import ListItem from '../components/ListItem'
 
-const UpcomingWeather = () => {
-  // DATA
-  const DATA = [
-    {
-      dt_txt: '2023-02-18 12:00:00',
-      main: {
-        temp_min: 8.55,
-        temp_max: 7.55
-      },
-      weather: [
-        {
-          main: 'Clear'
-        }
-      ]
-    },
-    {
-      dt_txt: '2023-02-19 15:00:00',
-      main: {
-        temp_min: 8.55,
-        temp_max: 7.55
-      },
-      weather: [
-        {
-          main: 'Clouds'
-        }
-      ]
-    },
-    {
-      dt_txt: '2023-02-20 18:00:00',
-      main: {
-        temp_min: 8.55,
-        temp_max: 7.55
-      },
-      weather: [
-        {
-          main: 'rain'
-        }
-      ]
-    }
-  ]
-
+const UpcomingWeather = ({ weatherData }) => {
   const { container, image } = styles
   const renderItem = ({ item }) => (
     <ListItem
@@ -65,9 +25,8 @@ const UpcomingWeather = () => {
         source={require('../../assets/cloudy.jpg')}
         style={image}
       >
-        <Text>UpcomingWeather</Text>
         <FlatList
-          data={DATA}
+          data={weatherData}
           renderItem={renderItem}
           keyExtractor={(item) => item.dt_txt}
         />
