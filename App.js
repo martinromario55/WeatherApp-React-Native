@@ -9,7 +9,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       {Platform.OS === 'ios' && <Status style="auto" />}
-      <City />
+      <CurrentWeather />
     </View>
   )
 }

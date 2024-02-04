@@ -1,23 +1,43 @@
+import React from 'react'
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
 import { Feather } from '@expo/vector-icons'
+import RowText from '../components/RowText'
 
 export default function CurrentWeather() {
+  const {
+    wrapper,
+    container,
+    temp,
+    title,
+    feels,
+    hilowWrapper,
+    highLow,
+    bodyWrapper,
+    description,
+    message
+  } = styles
   return (
-    <SafeAreaView style={styles.wrapper}>
-      <View style={styles.container}>
-        <Text style={styles.title}>Current Weather</Text>
+    <SafeAreaView style={wrapper}>
+      <View style={container}>
+        <Text style={title}>Current Weather</Text>
         <Feather name="sun" size={100} color="black" />
-        <Text style={styles.temp}>6°</Text>
-        <Text style={styles.feels}>Feels like 5°</Text>
-        <View style={styles.hilowWrapper}>
-          <Text style={styles.hilow}>High: 8°</Text>
-          <Text style={styles.hilow}>Low: 6°</Text>
-        </View>
+        <Text style={temp}>{'6°'}</Text>
+        <Text style={feels}>{'Feels like 5°'}</Text>
+        <RowText
+          messageOne={'High: 8'}
+          messageTwo={'Low: 6'}
+          containerStyles={hilowWrapper}
+          messageOneStyles={highLow}
+          messageTwoStyles={highLow}
+        />
       </View>
-      <View style={styles.bodyWrapper}>
-        <Text style={styles.description}>It's sunny</Text>
-        <Text style={styles.message}>It's perfect t-shirt weather</Text>
-      </View>
+      <RowText
+        messageOne={"It's sunny"}
+        messageTwo={"It's perfect t-shirt weather"}
+        containerStyles={bodyWrapper}
+        messageOneStyles={description}
+        messageTwoStyles={message}
+      />
     </SafeAreaView>
   )
 }
@@ -27,44 +47,44 @@ const styles = StyleSheet.create({
     flex: 1,
 
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   wrapper: {
     flex: 1,
-    backgroundColor: 'pink',
+    backgroundColor: 'pink'
   },
   title: {
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
-    marginBottom: 20,
+    marginBottom: 20
   },
   temp: {
     fontSize: 40,
     fontWeight: 'bold',
-    color: 'black',
+    color: 'black'
   },
   feels: {
     fontSize: 20,
-    color: 'black',
+    color: 'black'
   },
   hilowWrapper: {
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
-  hilow: {
+  highLow: {
     fontSize: 20,
-    color: 'black',
+    color: 'black'
   },
   bodyWrapper: {
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     paddingLeft: 25,
-    marginBottom: 40,
+    marginBottom: 40
   },
   description: {
-    fontSize: 48,
+    fontSize: 48
   },
   message: {
-    fontSize: 30,
-  },
+    fontSize: 30
+  }
 })
